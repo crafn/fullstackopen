@@ -1,0 +1,12 @@
+New note SPA
+
+note over Browser: User presses button
+note over Browser:
+Javascript handler executes, which
+updates notes shown on page and
+sends note to server.
+end note
+
+Browser->Server: POST /new_note_spa
+note over Server: Server stores new note
+Server-->Browser: 201 Created

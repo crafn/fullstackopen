@@ -1,0 +1,32 @@
+title New note sequence
+
+note over Browser: User presses button
+
+Browser->Server: POST /new_note
+note over Server: Server saves submitted note
+Server-->Browser: 302 Found, Location: /notes
+
+note over Browser: Browser asks for /notes from server
+
+Browser->Server: GET /notes
+Server-->Browser: 304 Not modified
+
+Browser->Server: GET /main.css
+Server-->Browser: 304 Not modified
+
+Browser->Server: GET /main.js
+Server-->Browser: 304 Not modified
+
+note over Browser:
+Browser starts executing javascript,
+which issues data request
+end note
+
+Browser->Server: GET /data.json
+note over Server: Server retrieves all notes and sends them to browser
+Server-->Browser: 200 Ok
+
+note over Browser:
+Browser executes js handler that writes
+received notes to page
+end note

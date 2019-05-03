@@ -1,0 +1,20 @@
+title Visit SPA site
+
+Browser->Server: GET /spa
+note over Server: Sends HTML back
+Server-->Browser: 200 OK
+
+Browser->Server: GET /main.css
+Server-->Browser: 200 OK
+
+Browser->Server: GET /spa.js
+Server-->Browser: 200 OK
+
+note over Browser: Executes javascript that queries data.json
+Browser->Server: GET /data.json
+Server-->Browser: 200 OK
+
+note over Browser: Executes javascript that writes notes on page
+
+Browser->Server: GET /favicon.ico
+Server-->Browser: 404 Not Found
